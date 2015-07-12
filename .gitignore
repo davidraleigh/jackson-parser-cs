@@ -207,3 +207,5 @@ FakesAssemblies/
 # Visual Studio 6 workspace options file
 *.opt
 sharpencore-0.0.1-SNAPSHOT-jar-with-dependencies.jar
+
+junit-4.8.2.jar
