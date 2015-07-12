@@ -15,7 +15,7 @@ namespace com.fasterxml.jackson.core
 	/// instance.
 	/// </remarks>
 	/// <author>Tatu Saloranta</author>
-	public abstract class JsonGenerator : System.IDisposable, Sharpen.Flushable, com.fasterxml.jackson.core.Versioned
+	public abstract class JsonGenerator : System.IDisposable, com.fasterxml.jackson.core.Versioned
 	{
 		/// <summary>Enumeration that defines all togglable features for generators.</summary>
 		[System.Serializable]

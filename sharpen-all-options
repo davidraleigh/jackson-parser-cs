@@ -115,7 +115,7 @@
 -methodMapping org.junit.Assert.assertFalse Sharpen.Tests.IsFalse
 -methodMapping org.junit.Assert.assertNotEquals NUnit.Framework.Assert.AreNotEqual
 -methodMapping org.junit.Assert.assertTrue Sharpen.Tests.IsTrue
-
+-typeMapping java.io.Closeable.close System.IDisposable.Dispose
 
 
 -propertyMapping java.lang.Class.getPackage Assembly
