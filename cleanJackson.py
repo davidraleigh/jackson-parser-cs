@@ -20,4 +20,4 @@ replace('./com/fasterxml/jackson/core/ObjectCodec.cs', 'where T : com.fasterxml.
 
 replace('./com/fasterxml/jackson/core/format/InputAccessor.cs','public interface InputAccessor', 'public class InputAccessor')
 
-replace('./com/fasterxml/jackson/core/JsonGenerator.cs', 'public abstract class JsonGenerator : System.IDisposable, Sharpen.Flushable, com.fasterxml.jackson.core.Versioned', 'public abstract class JsonGenerator : System.IDisposable, com.fasterxml.jackson.core.Versioned')
+replace('./com/fasterxml/jackson/core/JsonGenerator.cs', 'public abstract class JsonGenerator : System.IDisposable, java.io.Flushable, com.fasterxml.jackson.core.Versioned', 'public abstract class JsonGenerator : System.IDisposable, com.fasterxml.jackson.core.Versioned')

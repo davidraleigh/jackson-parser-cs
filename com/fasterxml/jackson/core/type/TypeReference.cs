@@ -27,7 +27,7 @@ namespace com.fasterxml.jackson.core.type
 	/// <see cref="ResolvedType"/>
 	/// .
 	/// </summary>
-	public abstract class TypeReference<T> : java.lang.Comparable<com.fasterxml.jackson.core.type.TypeReference
+	public abstract class TypeReference<T> : System.IComparable<com.fasterxml.jackson.core.type.TypeReference
 		<T>>
 	{
 		protected internal readonly java.lang.reflect.Type _type;

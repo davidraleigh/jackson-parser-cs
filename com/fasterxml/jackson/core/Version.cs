@@ -16,7 +16,7 @@ namespace com.fasterxml.jackson.core
 	/// if provided, they should align with Maven artifact information.
 	/// </remarks>
 	[System.Serializable]
-	public class Version : java.lang.Comparable<com.fasterxml.jackson.core.Version>
+	public class Version : System.IComparable<com.fasterxml.jackson.core.Version>
 	{
 		private const long serialVersionUID = 1L;
 
