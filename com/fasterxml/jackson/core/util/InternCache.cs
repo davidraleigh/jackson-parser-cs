@@ -18,8 +18,8 @@ namespace com.fasterxml.jackson.core.util
 	/// detail -- no code should ever directly call Map methods.
 	/// </remarks>
 	[System.Serializable]
-	public sealed class InternCache : java.util.concurrent.ConcurrentHashMap<string, 
-		string>
+	public sealed class InternCache : System.Collections.Concurrent.ConcurrentDictionary
+		<string, string>
 	{
 		/// <summary>
 		/// Size to use is somewhat arbitrary, so let's choose something that's

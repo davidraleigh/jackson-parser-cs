@@ -229,6 +229,7 @@
 -typeMapping java.util.zip.Inflater ICSharpCode.SharpZipLib.Zip.Compression.Inflater
 -typeMapping java.util.zip.ZipException ICSharpCode.SharpZipLib.SharpZipBaseException
 
+-namespaceMapping java.util.concurrent.ConcurrentHashMap System.Collections.Concurrent.ConcurrentDictionary
 -namespaceMapping java.lang.Comparable System.IComparable
 -namespaceMapping com.adobe.xmp.XMPMeta Com.Adobe.Xmp.XMPMeta
 -namespaceMapping com.drew.lang.annotations JetBrains.Annotations
