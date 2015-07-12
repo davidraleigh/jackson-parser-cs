@@ -10,7 +10,7 @@ namespace com.fasterxml.jackson.core.io
 	/// that data remains, it's returned; but as long as it's read, we'll
 	/// just use data from the underlying original stream.
 	/// This is similar to
-	/// <see cref="Sharpen.PushbackInputStream"/>
+	/// <see cref="java.io.PushbackInputStream"/>
 	/// , but here there's
 	/// only one implicit pushback, when instance is constructed.
 	/// </summary>

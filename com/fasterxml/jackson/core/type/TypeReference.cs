@@ -27,14 +27,14 @@ namespace com.fasterxml.jackson.core.type
 	/// <see cref="ResolvedType"/>
 	/// .
 	/// </summary>
-	public abstract class TypeReference<T> : Sharpen.Comparable<com.fasterxml.jackson.core.type.TypeReference
+	public abstract class TypeReference<T> : java.lang.Comparable<com.fasterxml.jackson.core.type.TypeReference
 		<T>>
 	{
-		protected internal readonly Sharpen.reflect.Type _type;
+		protected internal readonly java.lang.reflect.Type _type;
 
 		protected internal TypeReference()
 		{
-			Sharpen.reflect.Type superClass = GetType().getGenericSuperclass();
+			java.lang.reflect.Type superClass = GetType().getGenericSuperclass();
 			if (superClass is System.Type)
 			{
 				// sanity check, should never happen
@@ -48,11 +48,11 @@ namespace com.fasterxml.jackson.core.type
 			*   workarounds for valid case(s) and/or error to throw
 			*   on invalid one(s).
 			*/
-			_type = ((Sharpen.reflect.ParameterizedType)superClass).getActualTypeArguments()[
-				0];
+			_type = ((java.lang.reflect.ParameterizedType)superClass).getActualTypeArguments(
+				)[0];
 		}
 
-		public virtual Sharpen.reflect.Type getType()
+		public virtual java.lang.reflect.Type getType()
 		{
 			return _type;
 		}

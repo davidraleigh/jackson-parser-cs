@@ -397,9 +397,9 @@ namespace com.fasterxml.jackson.core.@base
 					case JsonTokenIdConstants.ID_EMBEDDED_OBJECT:
 					{
 						object value = this.getEmbeddedObject();
-						if (value is Sharpen.Number)
+						if (value is java.lang.Number)
 						{
-							return ((Sharpen.Number)value);
+							return ((java.lang.Number)value);
 						}
 						break;
 					}
@@ -463,9 +463,9 @@ namespace com.fasterxml.jackson.core.@base
 					case JsonTokenIdConstants.ID_EMBEDDED_OBJECT:
 					{
 						object value = this.getEmbeddedObject();
-						if (value is Sharpen.Number)
+						if (value is java.lang.Number)
 						{
-							return ((Sharpen.Number)value);
+							return ((java.lang.Number)value);
 						}
 						break;
 					}
@@ -512,9 +512,9 @@ namespace com.fasterxml.jackson.core.@base
 					case JsonTokenIdConstants.ID_EMBEDDED_OBJECT:
 					{
 						object value = this.getEmbeddedObject();
-						if (value is Sharpen.Number)
+						if (value is java.lang.Number)
 						{
-							return ((Sharpen.Number)value);
+							return ((java.lang.Number)value);
 						}
 						break;
 					}

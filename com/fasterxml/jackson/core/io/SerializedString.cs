@@ -71,13 +71,13 @@ namespace com.fasterxml.jackson.core.io
 		/**********************************************************
 		*/
 		/// <exception cref="System.IO.IOException"/>
-		private void readObject(Sharpen.ObjectInputStream @in)
+		private void readObject(java.io.ObjectInputStream @in)
 		{
 			_jdkSerializeValue = @in.readUTF();
 		}
 
 		/// <exception cref="System.IO.IOException"/>
-		private void writeObject(Sharpen.ObjectOutputStream @out)
+		private void writeObject(java.io.ObjectOutputStream @out)
 		{
 			@out.writeUTF(_value);
 		}

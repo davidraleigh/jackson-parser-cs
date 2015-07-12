@@ -32,15 +32,15 @@ namespace com.fasterxml.jackson.core.io
 
 		/// <summary>
 		/// This <code>ThreadLocal</code> contains a
-		/// <see cref="Sharpen.@ref.SoftReference{T}"/>
+		/// <see cref="Sharpen.SoftReference{T}"/>
 		/// to a
 		/// <see cref="com.fasterxml.jackson.core.util.BufferRecycler"/>
 		/// used to provide a low-cost
 		/// buffer recycling between reader and writer instances.
 		/// </summary>
-		protected internal static readonly Sharpen.ThreadLocal<Sharpen.@ref.SoftReference
-			<com.fasterxml.jackson.core.io.JsonStringEncoder>> _threadEncoder = new Sharpen.ThreadLocal
-			<Sharpen.@ref.SoftReference<com.fasterxml.jackson.core.io.JsonStringEncoder>>();
+		protected internal static readonly java.lang.ThreadLocal<Sharpen.SoftReference<com.fasterxml.jackson.core.io.JsonStringEncoder
+			>> _threadEncoder = new java.lang.ThreadLocal<Sharpen.SoftReference<com.fasterxml.jackson.core.io.JsonStringEncoder
+			>>();
 
 		/// <summary>
 		/// Lazily constructed text buffer used to produce JSON encoded Strings
@@ -79,14 +79,14 @@ namespace com.fasterxml.jackson.core.io
 		/// </summary>
 		public static com.fasterxml.jackson.core.io.JsonStringEncoder getInstance()
 		{
-			Sharpen.@ref.SoftReference<com.fasterxml.jackson.core.io.JsonStringEncoder> @ref = 
-				_threadEncoder.get();
+			Sharpen.SoftReference<com.fasterxml.jackson.core.io.JsonStringEncoder> @ref = _threadEncoder
+				.get();
 			com.fasterxml.jackson.core.io.JsonStringEncoder enc = (@ref == null) ? null : @ref
 				.get();
 			if (enc == null)
 			{
 				enc = new com.fasterxml.jackson.core.io.JsonStringEncoder();
-				_threadEncoder.set(new Sharpen.@ref.SoftReference<com.fasterxml.jackson.core.io.JsonStringEncoder
+				_threadEncoder.set(new Sharpen.SoftReference<com.fasterxml.jackson.core.io.JsonStringEncoder
 					>(enc));
 			}
 			return enc;

@@ -229,7 +229,7 @@ namespace com.fasterxml.jackson.core.json
 					Sharpen.InputStream @in = _in;
 					if (@in == null)
 					{
-						@in = new Sharpen.ByteArrayInputStream(_inputBuffer, _inputPtr, _inputEnd);
+						@in = new System.IO.MemoryStream(_inputBuffer, _inputPtr, _inputEnd);
 					}
 					else
 					{
@@ -242,7 +242,7 @@ namespace com.fasterxml.jackson.core.json
 								_inputPtr, _inputEnd);
 						}
 					}
-					return new Sharpen.InputStreamReader(@in, enc.getJavaName());
+					return new System.IO.StreamReader(@in, enc.getJavaName());
 				}
 
 				case 32:
@@ -623,8 +623,8 @@ namespace com.fasterxml.jackson.core.json
 		/// <exception cref="System.IO.IOException"/>
 		private void reportWeirdUCS4(string type)
 		{
-			throw new Sharpen.CharConversionException("Unsupported UCS-4 endianness (" + type
-				 + ") detected");
+			throw new System.IO.IOException("Unsupported UCS-4 endianness (" + type + ") detected"
+				);
 		}
 
 		/*

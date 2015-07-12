@@ -1060,7 +1060,7 @@ main_loop_break: ;
 		}
 
 		/// <exception cref="System.IO.IOException"/>
-		public override Sharpen.Number getNumberValue()
+		public override java.lang.Number getNumberValue()
 		{
 			return delegate_.getNumberValue();
 		}

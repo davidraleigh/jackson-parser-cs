@@ -15,7 +15,7 @@ namespace com.fasterxml.jackson.core
 	/// instance.
 	/// </remarks>
 	/// <author>Tatu Saloranta</author>
-	public abstract class JsonGenerator : System.IDisposable, com.fasterxml.jackson.core.Versioned
+	public abstract class JsonGenerator : System.IDisposable, java.io.Flushable, com.fasterxml.jackson.core.Versioned
 	{
 		/// <summary>Enumeration that defines all togglable features for generators.</summary>
 		[System.Serializable]
@@ -2262,9 +2262,9 @@ namespace com.fasterxml.jackson.core
 				writeString((string)value);
 				return;
 			}
-			if (value is Sharpen.Number)
+			if (value is java.lang.Number)
 			{
-				Sharpen.Number n = (Sharpen.Number)value;
+				java.lang.Number n = (java.lang.Number)value;
 				if (n is int)
 				{
 					writeNumber(n);

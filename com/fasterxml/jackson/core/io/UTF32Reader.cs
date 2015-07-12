@@ -203,7 +203,7 @@ main_loop_break: ;
 		{
 			int bytePos = _byteCount + gotBytes;
 			int charPos = _charCount;
-			throw new Sharpen.CharConversionException("Unexpected EOF in the middle of a 4-byte UTF-32 char: got "
+			throw new System.IO.IOException("Unexpected EOF in the middle of a 4-byte UTF-32 char: got "
 				 + gotBytes + ", needed " + needed + ", at char #" + charPos + ", byte #" + bytePos
 				 + ")");
 		}
@@ -213,7 +213,7 @@ main_loop_break: ;
 		{
 			int bytePos = _byteCount + _ptr - 1;
 			int charPos = _charCount + offset;
-			throw new Sharpen.CharConversionException("Invalid UTF-32 character 0x" + Sharpen.Extensions.ToHexString
+			throw new System.IO.IOException("Invalid UTF-32 character 0x" + Sharpen.Extensions.ToHexString
 				(value) + msg + " at char #" + charPos + ", byte #" + bytePos + ")");
 		}
 

@@ -104,17 +104,17 @@ namespace com.fasterxml.jackson.core
 			/// Feature that determines whether we will use
 			/// <see cref="com.fasterxml.jackson.core.util.BufferRecycler"/>
 			/// with
-			/// <see cref="Sharpen.ThreadLocal{T}"/>
+			/// <see cref="java.lang.ThreadLocal{T}"/>
 			/// and
-			/// <see cref="Sharpen.@ref.SoftReference{T}"/>
+			/// <see cref="Sharpen.SoftReference{T}"/>
 			/// , for efficient reuse of
 			/// underlying input/output buffers.
 			/// This usually makes sense on normal J2SE/J2EE server-side processing;
 			/// but may not make sense on platforms where
-			/// <see cref="Sharpen.@ref.SoftReference{T}"/>
+			/// <see cref="Sharpen.SoftReference{T}"/>
 			/// handling
 			/// is broken (like Android), or if there are retention issues due to
-			/// <see cref="Sharpen.ThreadLocal{T}"/>
+			/// <see cref="java.lang.ThreadLocal{T}"/>
 			/// (see
 			/// <a href="https://github.com/FasterXML/jackson-core/issues/189">Issue #189</a>
 			/// for a possible case)
@@ -203,15 +203,15 @@ namespace com.fasterxml.jackson.core
 
 		/// <summary>
 		/// This <code>ThreadLocal</code> contains a
-		/// <see cref="Sharpen.@ref.SoftReference{T}"/>
+		/// <see cref="Sharpen.SoftReference{T}"/>
 		/// to a
 		/// <see cref="com.fasterxml.jackson.core.util.BufferRecycler"/>
 		/// used to provide a low-cost
 		/// buffer recycling between reader and writer instances.
 		/// </summary>
-		protected internal static readonly Sharpen.ThreadLocal<Sharpen.@ref.SoftReference
-			<com.fasterxml.jackson.core.util.BufferRecycler>> _recyclerRef = new Sharpen.ThreadLocal
-			<Sharpen.@ref.SoftReference<com.fasterxml.jackson.core.util.BufferRecycler>>();
+		protected internal static readonly java.lang.ThreadLocal<Sharpen.SoftReference<com.fasterxml.jackson.core.util.BufferRecycler
+			>> _recyclerRef = new java.lang.ThreadLocal<Sharpen.SoftReference<com.fasterxml.jackson.core.util.BufferRecycler
+			>>();
 
 		/// <summary>Each factory comes equipped with a shared root symbol table.</summary>
 		/// <remarks>
@@ -922,7 +922,7 @@ namespace com.fasterxml.jackson.core
 		{
 			// true, since we create InputStream from File
 			com.fasterxml.jackson.core.io.IOContext ctxt = _createContext(f, true);
-			Sharpen.InputStream @in = new Sharpen.FileInputStream(f);
+			Sharpen.InputStream @in = new java.io.FileInputStream(f);
 			return _createParser(_decorate(@in, ctxt), ctxt);
 		}
 
@@ -1101,7 +1101,7 @@ namespace com.fasterxml.jackson.core
 			if (_inputDecorator != null)
 			{
 				// easier to just wrap in a Reader than extend InputDecorator
-				return createParser(new Sharpen.CharArrayReader(content, offset, len));
+				return createParser(new java.io.CharArrayReader(content, offset, len));
 			}
 			return _createParser(content, offset, len, _createContext(content, true), false);
 		}
@@ -1372,7 +1372,7 @@ namespace com.fasterxml.jackson.core
 		public virtual com.fasterxml.jackson.core.JsonGenerator createGenerator(Sharpen.FilePath
 			 f, com.fasterxml.jackson.core.JsonEncoding enc)
 		{
-			Sharpen.OutputStream @out = new Sharpen.FileOutputStream(f);
+			Sharpen.OutputStream @out = new java.io.FileOutputStream(f);
 			// true -> yes, we have to manage the stream since we created it
 			com.fasterxml.jackson.core.io.IOContext ctxt = _createContext(@out, true);
 			ctxt.setEncoding(enc);
@@ -1661,7 +1661,7 @@ namespace com.fasterxml.jackson.core
 				return new com.fasterxml.jackson.core.io.UTF8Writer(ctxt, @out);
 			}
 			// not optimal, but should do unless we really care about UTF-16/32 encoding speed
-			return new Sharpen.OutputStreamWriter(@out, enc.getJavaName());
+			return new java.io.OutputStreamWriter(@out, enc.getJavaName());
 		}
 
 		/*
@@ -1759,13 +1759,13 @@ namespace com.fasterxml.jackson.core
 			if (isEnabled(com.fasterxml.jackson.core.JsonFactory.Feature.USE_THREAD_LOCAL_FOR_BUFFER_RECYCLING
 				))
 			{
-				Sharpen.@ref.SoftReference<com.fasterxml.jackson.core.util.BufferRecycler> @ref = 
-					_recyclerRef.get();
+				Sharpen.SoftReference<com.fasterxml.jackson.core.util.BufferRecycler> @ref = _recyclerRef
+					.get();
 				br = (@ref == null) ? null : @ref.get();
 				if (br == null)
 				{
 					br = new com.fasterxml.jackson.core.util.BufferRecycler();
-					_recyclerRef.set(new Sharpen.@ref.SoftReference<com.fasterxml.jackson.core.util.BufferRecycler
+					_recyclerRef.set(new Sharpen.SoftReference<com.fasterxml.jackson.core.util.BufferRecycler
 						>(br));
 				}
 			}
@@ -1815,7 +1815,7 @@ namespace com.fasterxml.jackson.core
 					string path = url.AbsolutePath;
 					if (path.IndexOf('%') < 0)
 					{
-						return new Sharpen.FileInputStream(url.AbsolutePath);
+						return new java.io.FileInputStream(url.AbsolutePath);
 					}
 				}
 			}

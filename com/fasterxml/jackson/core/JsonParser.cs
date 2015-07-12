@@ -1373,7 +1373,7 @@ namespace com.fasterxml.jackson.core
 		/// express the numeric value just parsed.
 		/// </remarks>
 		/// <exception cref="System.IO.IOException"/>
-		public abstract Sharpen.Number getNumberValue();
+		public abstract java.lang.Number getNumberValue();
 
 		/// <summary>
 		/// If current token is of type

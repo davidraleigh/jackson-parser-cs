@@ -133,8 +133,7 @@ namespace com.fasterxml.jackson.core.format
 		{
 			if (_originalStream == null)
 			{
-				return new Sharpen.ByteArrayInputStream(_bufferedData, _bufferedStart, _bufferedLength
-					);
+				return new System.IO.MemoryStream(_bufferedData, _bufferedStart, _bufferedLength);
 			}
 			return new com.fasterxml.jackson.core.io.MergedStream(null, _originalStream, _bufferedData
 				, _bufferedStart, _bufferedLength);

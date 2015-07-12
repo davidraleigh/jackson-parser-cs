@@ -135,7 +135,7 @@ namespace com.fasterxml.jackson.core.util
 		/// <returns>The version</returns>
 		[System.ObsoleteAttribute(@"Since 2.6: functionality not used by any official Jackson component, should be moved out if anyone needs it"
 			)]
-		public static com.fasterxml.jackson.core.Version mavenVersionFor(Sharpen.ClassLoader
+		public static com.fasterxml.jackson.core.Version mavenVersionFor(java.lang.ClassLoader
 			 cl, string groupId, string artifactId)
 		{
 			// since 2.6

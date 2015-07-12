@@ -8,7 +8,7 @@ namespace com.fasterxml.jackson.core.util
 {
 	/// <summary>
 	/// Helper class that is similar to
-	/// <see cref="Sharpen.ByteArrayOutputStream"/>
+	/// <see cref="java.io.ByteArrayOutputStream"/>
 	/// in usage, but more geared to Jackson use cases internally.
 	/// Specific changes include segment storage (no need to have linear
 	/// backing buffer, can avoid reallocations, copying), as well API
@@ -22,7 +22,7 @@ namespace com.fasterxml.jackson.core.util
 	/// to allow
 	/// efficient aggregation of output content as a byte array, similar
 	/// to how
-	/// <see cref="Sharpen.ByteArrayOutputStream"/>
+	/// <see cref="java.io.ByteArrayOutputStream"/>
 	/// works, but somewhat more
 	/// efficiently for many use cases.
 	/// </summary>

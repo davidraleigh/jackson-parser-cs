@@ -700,7 +700,7 @@ namespace com.fasterxml.jackson.core.@base
 		/**********************************************************
 		*/
 		/// <exception cref="System.IO.IOException"/>
-		public override Sharpen.Number getNumberValue()
+		public override java.lang.Number getNumberValue()
 		{
 			if (_numTypesValid == NR_UNKNOWN)
 			{
